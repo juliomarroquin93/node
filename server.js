@@ -74,9 +74,8 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
-   var reqs = {
+   let reqs = {
     _startTime     :    Date,
-    app            :    function(req,res){},
     body           :    {},
     client         :    Socket,
     complete       :    Boolean,
@@ -88,17 +87,14 @@ app.get('/', function (req, res) {
     httpVersionMajor    :    Number,
     httpVersionMinor    :     Number,
     method         :    String,  // e.g. GET POST PUT DELETE
-    next           :    function next(err){},
     originalUrl    :    String,     /* e.g. /erer?param1=23¶m2=45 */
     params         :    [],
     query          :    {},
     readable       :    Boolean,
-    res            :    ServerResponse,
-    route          :    Route,
     signedCookies  :    {},
     socket         :    Socket,
     url            :    String /*e.g. /erer?param1=23¶m2=45 */
-}
+};
   var ips = getIp(reqs);
  //your client ip
   res.send(ips);
