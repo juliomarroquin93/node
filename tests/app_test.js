@@ -4,6 +4,8 @@ var server   = require('../server'),
     should   = chai.should();
 
 chai.use(chaiHTTP);
+var ip =require('./ip');
+console.log(ip.address());
 
 reqServer = process.env.HTTP_TEST_SERVER || server
 
