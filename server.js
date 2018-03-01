@@ -67,6 +67,7 @@ app.get('/', function (req, res) {
   // initialized.
   if (!db) {
     initDb(function(err){});
+      console.log('hola');
   }
   if (db) {
     var col = db.collection('counts');
