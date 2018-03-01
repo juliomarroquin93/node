@@ -6,7 +6,9 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 
-const requestIp = require('request-ip');
+
+var http = require('http');
+var clientIp = require('client-ip');
 
 // inside middleware handler
 
@@ -72,9 +74,11 @@ var initDb = function(callback) {
 
 app.get('/', function (req, res) {
 
-  app.use(requestIp.mw())
-      const ips = req.clientIp;
-      res.send(ips);
+http.createServer(function (req, res) {
+    var ips = clientIp(req);
+    res.end(ips);
+    res.send('hola');
+  }).listen(3000);
 
 
 
