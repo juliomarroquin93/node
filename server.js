@@ -6,7 +6,7 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 
-    var ip = require('ip');
+
 
 Object.assign=require('object-assign')
 
@@ -65,11 +65,7 @@ var initDb = function(callback) {
 
 app.get('/', function (req, res) {
 
-if(ip.address()){
-   res.send(ip.address());
- }else{
-   res.send('error');
- }
+res.send('hola');
   // try to initialize the db on every request if it's not already
   // initialized.
   if (!db) {
