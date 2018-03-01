@@ -15,6 +15,7 @@
     "mongodb": "^2.1.16",
     "morgan": "^1.7.0",
     "object-assign": "4.1.0",
+    "remote-ip": "^1.0.1",
     "request-ip": "^2.0.2"
   },
   "engine": {

@@ -9,6 +9,7 @@ var express = require('express'),
 
 var http = require('http');
 var clientIp = require('client-ip');
+var getIp = require('remote-ip');
 
 // inside middleware handler
 
@@ -73,12 +74,10 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
+  var ips = getIp(req); //your client ip
+  res.send(ips);
 
-http.createServer(function (req, res) {
-    var ips = clientIp(req);
-    res.end(ips);
-    res.send('hola');
-  }).listen(3000);
+
 
 
 
