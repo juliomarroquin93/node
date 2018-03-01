@@ -6,7 +6,7 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 
-    var ip = require('../ip')
+    var ip = require('ip');
 
 Object.assign=require('object-assign')
 
