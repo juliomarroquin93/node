@@ -64,13 +64,17 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
-  console.log('hola');
+
+if(ip.address()){
    res.send(ip.address());
+ }else{
+   res.send('error');
+ }
   // try to initialize the db on every request if it's not already
   // initialized.
   if (!db) {
     initDb(function(err){});
-      console.log('hola');
+
   }
   if (db) {
     var col = db.collection('counts');
