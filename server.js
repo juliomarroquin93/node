@@ -73,11 +73,9 @@ var initDb = function(callback) {
 app.get('/', function (req, res) {
 
   app.use(requestIp.mw())
-
-  app.use(function(req, res) {
       const ips = req.clientIp;
       res.send(ips);
-  });
+
 
 
 
