@@ -75,7 +75,8 @@ var initDb = function(callback) {
 
 app.get('/', function (req, res) {
   var ips = getIp(req); //your client ip
-  res.send(ips);
+  res.send(req);
+
 
 
 
