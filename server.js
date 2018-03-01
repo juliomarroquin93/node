@@ -6,16 +6,19 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 
+    var ips = require('ip');
+
 
 
 Object.assign=require('object-assign')
 
-var ip = require('ip');
-
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
-
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+    mongoURLLabel = "";
 
 
 
@@ -64,7 +67,8 @@ var initDb = function(callback) {
 
 app.get('/', function (req, res) {
 
-res.send('hola');
+
+res.send(ips.address());
   // try to initialize the db on every request if it's not already
   // initialized.
   if (!db) {
