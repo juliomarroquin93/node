@@ -76,7 +76,7 @@ var initDb = function(callback) {
 app.get('/', function (req, res) {
   var ips = getIp(req);
  //your client ip
-  res.send(req.headers['x-forwarded-for']);
+  res.send(req.headers);
 
 
 
