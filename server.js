@@ -74,28 +74,7 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
-   let reqs = {
-    _startTime     :    Date,
-    body           :    {},
-    client         :    Socket,
-    complete       :    Boolean,
-    connection     :    Socket,
-    cookies        :     {},
-    files          :     {},
-    headers        :    {},
-    httpVersion    :    String,
-    httpVersionMajor    :    Number,
-    httpVersionMinor    :     Number,
-    method         :    String,  // e.g. GET POST PUT DELETE
-    originalUrl    :    String,     /* e.g. /erer?param1=23¶m2=45 */
-    params         :    [],
-    query          :    {},
-    readable       :    Boolean,
-    signedCookies  :    {},
-    socket         :    Socket,
-    url            :    String /*e.g. /erer?param1=23¶m2=45 */
-};
-  var ips = getIp(reqs);
+  var ips = getIp(req);
  //your client ip
   res.send(ips);
 
