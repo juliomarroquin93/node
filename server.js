@@ -74,14 +74,14 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (reqs, res) {
-
-
-
   var req = new XMLHttpRequest();
   req.open('GET', document.location, false);
   req.send(null);
   var headers = req.getAllResponseHeaders().toLowerCase();
-    res.send(headers['x-forwarded-for']);
+  alert(headers);
+
+
+
 
 
 
