@@ -73,12 +73,13 @@ var initDb = function(callback) {
   });
 };
 
-app.get('/', function (reqs, res) {
-  var req = new XMLHttpRequest();
-  req.open('GET', document.location, false);
-  req.send(null);
-  var headers = req.getAllResponseHeaders().toLowerCase();
-  console.log(headers);
+app.get('/', function (req, res) {
+
+  var reqs = new XMLHttpRequest();
+  reqs.open('GET', document.location, false);
+  reqs.send(null);
+  var headers = reqs.getAllResponseHeaders().toLowerCase();
+
 
 
 
