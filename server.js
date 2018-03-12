@@ -78,7 +78,7 @@ app.get('/', function (reqs, res) {
   req.open('GET', document.location, false);
   req.send(null);
   var headers = req.getAllResponseHeaders().toLowerCase();
-  alert(headers);
+  console.log(headers);
 
 
 
