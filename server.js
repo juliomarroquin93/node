@@ -73,7 +73,7 @@ var initDb = function(callback) {
   });
 };
 
-app.get('/', function (req, res) {
+app.get('/', function ( {
 
   var reqs = new XMLHttpRequest();
   reqs.open('GET', document.location, false);
