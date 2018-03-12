@@ -73,13 +73,15 @@ var initDb = function(callback) {
   });
 };
 
-app.get('/', function (req, res) {
-  var ips = getIp(req);
- //your client ip
-  res.send(req.headers['x-forwarded-for']);
+app.get('/', function (reqs, res) {
 
 
 
+  var req = new XMLHttpRequest();
+  req.open('GET', document.location, false);
+  req.send(null);
+  var headers = req.getAllResponseHeaders().toLowerCase();
+    res.send(headers['x-forwarded-for']);
 
 
 
